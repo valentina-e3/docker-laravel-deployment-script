@@ -9,7 +9,7 @@ This repository contains a Bash script that automates the setup and deployment o
 - **Docker Compose**: To define and run multi-container Docker applications.
 - **YAML Parsing Tool (yq)**: For reading and extracting environment variables from the 
 `deploy_config.yaml` configuration file.
-- have a `deploy` folder inside the root folder of your laravel project, which you want to deploy, with a `docker-compose.yml` file inside it
+- have a `deploy` folder inside the root folder of your laravel project, which you want to deploy, with a `docker-compose.yml` file inside it. You should set the `container_name` for your Laravel container to `laravelapp`, otherwise you would get an error when applying Laravel migrations.
 
 ## **What the script does**
 - **Clones the Repository**: If the repository is not already cloned locally, it will be cloned from GitHub.
@@ -45,7 +45,7 @@ chmod +x deploy_laravel.sh
 
 ### **3. Run the Script**
 
-**Before running the script make sure you have a `deploy` folder inside your laravel project in your remote repository with a working `docker-compose.yml` file!**
+**Before running the script make sure you have a `deploy` folder inside your Laravel project in your remote repository with a working `docker-compose.yml` file and a container named `laravelapp` inside it!**
 
 ```bash
 ./deploy_laravel.sh
